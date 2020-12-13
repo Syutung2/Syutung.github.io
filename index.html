@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>数据小助手 ---数据处理修复版本</title>
+    <meta name="keywords" content="数据小助手 大学物理 实验数据处理 在线计算器 物理实验 数据处理 不确定度 误差分析" />
+    <meta name="description" content="数据小助手是一套完善的物理实验辅助学习系统，包含实验文档，实验仪器，数据处理，问题思考等内容，全面辅助学生快捷完成物理实验相关工作" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <link rel = "Shortcut Icon" href="static/common/favicon.ico"/>
+    <!--引入css文件-->
+    <style>@font-face {font-family: 'FontAwesome';src: url('static/common/fonts/fontawesome-webfont-v=4.4.0.eot');src: url('static/common/fonts/fontawesome-webfont-.eot#iefix&v=4.4.0') format('embedded-opentype'), url('static/common/fonts/fontawesome-webfont-v=4.4.0.woff2') format('woff2'), url('static/common/fonts/fontawesome-webfont-v=4.4.0.woff') format('woff'), url('static/common/fonts/fontawesome-webfont-v=4.4.0.ttf') format('truetype'), url('static/common/fonts/fontawesome-webfont-v=4.4.0.svg#fontawesomeregular') format('svg');font-weight: normal;font-style: normal;}</style>
+    <link rel="stylesheet" href="static/common/css/main.css">
+    <link rel="stylesheet" href="static/default/css/base.css"/>
+    <link rel="stylesheet" href="static/common/css/animate.min.css"/>
+        <!--引入JavaScript文件-->
+    <script>const Latex_host = "https://latex.codecogs.com/gif.latex?";</script>
+    <script src="static/common/js/jquery.min.js"></script>
+    <script src="static/common/js/main.js"></script>
+    <script src="static/common/js/respond.js"></script>
+    <script src="static/default/js/main.js"></script>
+    <script src="static/default/js/test.js"></script>
+    </head>
+<body>
+<header class="container-layout bg-black fixed-top-left border-bottom border-black">
+    <div class="container">
+        <ul class="line button-group">
+            <li class="xb5 xm5 xs7 xl8 text-white" style="letter-spacing: 18px;">数据小助手</li>
+            <li class="xb1 xm2 xm1-move xb4-move hidden-s hidden-l margin-small-top"><button id="header_button_1" class="button bg-sub x11 x1-move text-big" style="float: right" disabled="disabled"><strong>注册</strong></button></li>
+            <li class="xb1 xm2 margin-small-top hidden-s hidden-l"><button id="header_button_2" class="button bg-yellow x11 x1-move text-big" style="float: right" disabled="disabled"><strong>登录</strong></button></li>
+            <li class="xb1 xm2 margin-small-top hidden-s hidden-l"><button id="header_button_3" class="button bg-green x11 x1-move text-big" style="float: right;"><strong>收藏</strong></button></li>
+        </ul>
+    </div>
+</header>
+<div id="null-nav"></div>
+<div class="container">
+    <div id="notice-nav" class="bg-main margin-bottom text-big">
+        <div id="time" class="hidden-l hidden-s xm2 xb2 text-white text-center"></div>
+        <div class="text-red xl2 xs2 xm1 xl1 text-right">公告：</div>
+        <div id="notice" class="xl10 xs10 xm9 xl9">
+            <ul>
+                                    <li>各实验方法原理部分请使用手机浏览器打开，微信内置浏览器打开有可能会出现错误</li>
+                                    <li>为迎合学校在线开放课程建设，本站将于近期进行大幅度改版，欢迎大家在网站底部意见反馈部分填写您宝贵的意见，可以在邮件中填写您的相关联系方式，默认为不记名邮件反馈，感谢大家的配合</li>
+                                    <li>问题思考部分思考题答案已更新，如果对答案有异议，可以进入页脚问答社区提出</li>
+                                    <li>添加问答社区，点击页脚问答社区方可进入</li>
+                                    <li>根据反馈，添加工具库，包含普通计算器，科学计算器，不确定度计算器，逐差法计算器，坐标图绘制</li>
+                                    <li>新版本发布,欢迎大家反馈意见</li>
+                            </ul>
+        </div>
+    </div>
+    <div class="margin-top">
+        <ul id="tab" class="bg-gray">
+            <li class="xb1 xm1 xs2 xl2 tab-nav current-nav">全部实验</li>
+            <li class="xb1 xm1 xs2 xl2 tab-nav">力学部分</li>
+            <li class="xb1 xm1 xs2 xl2 tab-nav">电学部分</li>
+            <li class="xb1 xm1 xs2 xl2 tab-nav">光学部分</li>
+            <li class="xb1 xm1 xs2 xl2 tab-nav">近代/综合</li>
+            <li class="xb1 xm1 xs2 xl2 tab-nav">工具库</li>
+        </ul>
+        <ul>
+            <li class="tab-content current-content">
+                <!--            引入内容-->
+                <ul id="tab-content-1" class="line container-menu">
+                                            <li class="xb3 xl3 xm4 xl6 padding-small">
+                            <a target="_blank" href="experiment/10000.html">
+                                <div class="border  padding-small">
+                                    <span class="x12 text-center text-white text-huge">力学部分</span>
+                                <span class="x12 text-center text-large padding-large-top">
+                                                                        绪论
+                                </span>
+                                                                    </div>
+                            </a>
+                        </li>
+                                            <li class="xb3 xl3 xm4 xl6 padding-small">
+                            <a target="_blank" href="experiment/10001.html">
+                                <div class="border  padding-small">
+                                    <span class="x12 text-center text-white text-huge">力学部分</span>
+                                <span class="x12 text-center text-large padding-large-top">
+                                                                        力学基本测量
+                                </span>
+                                                                    </div>
+                            </a>
+                        </li>
+                                            <li class="xb3 xl3 xm4 xl6 padding-small">
+                            <a target="_blank" href="experiment/10002.html">
+                                <div class="border  padding-small">
+                                    <span class="x12 text-center text-white text-huge">力学部分</span>
+                                <span class="x12 text-center text-large padding-large-top">
+                                                                        用拉伸法测定金属丝的杨氏模量
+                                </span>
+                                                                    </div>
+                            </a>
+                        </li>
+                                            <li class="xb3 xl3 xm4 xl6 padding-small">
+                            <a target="_blank" href="experiment/10004.html">
+                                <div class="border  padding-small">
+                                    <span class="x12 text-center text-white text-huge">力学部分</span>
+                                <span class="x12 text-center text-large padding-large-top">
+                                                                        刚体的转动惯量
+                                </span>
+                                                                    </div>
+                            </a>
+                        </li>
+                                            <li class="xb3 xl3 xm4 xl6 padding-small">
+                            <a target="_blank" href="experiment/10006.html">
+                                <div class="border  padding-small">
+                                    <span class="x12 text-center text-white text-huge">电学部分</span>
+                                <span class="x12 text-center text-large padding-large-top">
+                                                                        制流电路、分压电路和电学实验基础知识
+                                </span>
+                                                                    </div>
+                            </a>
+                        </li>
+                                            <li class="xb3 xl3 xm4 xl6 padding-small">
+                            <a target="_blank" href="experiment/10007.html">
+                                <div class="border  padding-small">
+                                    <span class="x12 text-center text-white text-huge">电学部分</span>
+                                <span class="x12 text-center text-large padding-large-top">
+                                                                        惠斯通电桥
+                                </span>
+                                                                    </div>
+                            </a>
+                        </li>
+                                            <li class="xb3 xl3 xm4 xl6 padding-small">
+                            <a target="_blank" href="experiment/10010.html">
+                                <div class="border  padding-small">
+                                    <span class="x12 text-center text-white text-huge">电学部分</span>
+                                <span class="x12 text-center text-large padding-large-top">
+                                                                        示波器的使用
+                                </span>
+                                                                    </div>
+                            </a>
+                        </li>
+                                            <li class="xb3 xl3 xm4 xl6 padding-small">
+                            <a target="_blank" href="experiment/10011.html">
+                                <div class="border  padding-small">
+                                    <span class="x12 text-center text-white text-huge">电学部分</span>
+                                <span class="x12 text-center text-large padding-large-top">
+                                                                        利用霍尔效应测磁场
+                                </span>
+                                                                    </div>
+                            </a>
+                        </li>
+                                            <li class="xb3 xl3 xm4 xl6 padding-small">
+                            <a target="_blank" href="experiment/10014.html">
+                                <div class="border  padding-small">
+                                    <span class="x12 text-center text-white text-huge">光学部分</span>
+                                <span class="x12 text-center text-large padding-large-top">
+                                                                        分光计的调节和三棱镜顶角的测定
+                                </span>
+                                                                    </div>
+                            </a>
+                        </li>
+                                            <li class="xb3 xl3 xm4 xl6 padding-small">
+                            <a target="_blank" href="experiment/10015.html">
+                                <div class="border  padding-small">
+                                    <span class="x12 text-center text-white text-huge">光学部分</span>
+                                <span class="x12 text-center text-large padding-large-top">
+                                                                        光栅的衍射
+                                </span>
+                                                                    </div>
+                            </a>
+                        </li>
+                                            <li class="xb3 xl3 xm4 xl6 padding-small">
+                            <a target="_blank" href="experiment/10017.html">
+                                <div class="border  padding-small">
+                                    <span class="x12 text-center text-white text-huge">光学部分</span>
+                                <span class="x12 text-center text-large padding-large-top">
+                                                                        牛顿环和劈尖干涉
+                                </span>
+                                                                    </div>
+                            </a>
+                        </li>
+                                            <li class="xb3 xl3 xm4 xl6 padding-small">
+                            <a target="_blank" href="experiment/10018.html">
+                                <div class="border  padding-small">
+                                    <span class="x12 text-center text-white text-huge">近代/综合</span>
+                                <span class="x12 text-center text-large padding-large-top">
+                                                                        光电效应实验及普朗克常数的测量
+                                </span>
+                                                                    </div>
+                            </a>
+                        </li>
+                                            <li class="xb3 xl3 xm4 xl6 padding-small">
+                            <a target="_blank" href="experiment/10019.html">
+                                <div class="border  padding-small">
+                                    <span class="x12 text-center text-white text-huge">近代/综合</span>
+                                <span class="x12 text-center text-large padding-large-top">
+                                                                        迈克尔孙干涉仪的调节和使用
+                                </span>
+                                                                    </div>
+                            </a>
+                        </li>
+                                            <li class="xb3 xl3 xm4 xl6 padding-small">
+                            <a target="_blank" href="experiment/10020.html">
+                                <div class="border  padding-small">
+                                    <span class="x12 text-center text-white text-huge">近代/综合</span>
+                                <span class="x12 text-center text-large padding-large-top">
+                                                                        密立根油滴实验
+                                </span>
+                                                                    </div>
+                            </a>
+                        </li>
+                                            <li class="xb3 xl3 xm4 xl6 padding-small">
+                            <a target="_blank" href="experiment/10021.html">
+                                <div class="border  padding-small">
+                                    <span class="x12 text-center text-white text-huge">近代/综合</span>
+                                <span class="x12 text-center text-large padding-large-top">
+                                                                        超声声速测量
+                                </span>
+                                                                    </div>
+                            </a>
+                        </li>
+                                            <li class="xb3 xl3 xm4 xl6 padding-small">
+                            <a target="_blank" href="experiment/10022.html">
+                                <div class="border  padding-small">
+                                    <span class="x12 text-center text-white text-huge">近代/综合</span>
+                                <span class="x12 text-center text-large padding-large-top">
+                                                                        动态悬挂法测量金属的杨氏模量
+                                </span>
+                                                                    </div>
+                            </a>
+                        </li>
+                                            <li class="xb3 xl3 xm4 xl6 padding-small">
+                            <a target="_blank" href="experiment/10023.html">
+                                <div class="border  padding-small">
+                                    <span class="x12 text-center text-white text-huge">近代/综合</span>
+                                <span class="x12 text-center text-large padding-large-top">
+                                                                        核磁共振(MNMR)实验
+                                </span>
+                                                                    </div>
+                            </a>
+                        </li>
+                                            <li class="xb3 xl3 xm4 xl6 padding-small">
+                            <a target="_blank" href="experiment/10026.html">
+                                <div class="border  padding-small">
+                                    <span class="x12 text-center text-white text-huge">近代/综合</span>
+                                <span class="x12 text-center text-large padding-large-top">
+                                                                        光敏传感器的光电特性研究
+                                </span>
+                                                                    </div>
+                            </a>
+                        </li>
+                                            <li class="xb3 xl3 xm4 xl6 padding-small">
+                            <a target="_blank" href="experiment/10027.html">
+                                <div class="border  padding-small">
+                                    <span class="x12 text-center text-white text-huge">近代/综合</span>
+                                <span class="x12 text-center text-large padding-large-top">
+                                                                        太阳能电池特性实验
+                                </span>
+                                                                    </div>
+                            </a>
+                        </li>
+                                    </ul>
+                <!--            引入内容结束-->
+            </li>
+            <li class="tab-content">
+                <!--            引入内容-->
+                <ul id="tab-content-2" class="line container-menu">
+                                                                        <li class="xb3 xl3 xm4 xl6 padding-small">
+                                <a target="_blank" href="experiment/10000.html">
+                                    <div class="border  padding-small">
+                                        <span class="x12 text-center text-white text-huge">力学部分</span>
+                                <span class="x12 text-center text-large padding-large-top">
+                                    绪论
+                                </span>
+                                                                            </div>
+                                </a>
+                            </li>
+                                                                                                <li class="xb3 xl3 xm4 xl6 padding-small">
+                                <a target="_blank" href="experiment/10001.html">
+                                    <div class="border  padding-small">
+                                        <span class="x12 text-center text-white text-huge">力学部分</span>
+                                <span class="x12 text-center text-large padding-large-top">
+                                    力学基本测量
+                                </span>
+                                                                            </div>
+                                </a>
+                            </li>
+                                                                                                <li class="xb3 xl3 xm4 xl6 padding-small">
+                                <a target="_blank" href="experiment/10002.html">
+                                    <div class="border  padding-small">
+                                        <span class="x12 text-center text-white text-huge">力学部分</span>
+                                <span class="x12 text-center text-large padding-large-top">
+                                    用拉伸法测定金属丝的杨氏模量
+                                </span>
+                                                                            </div>
+                                </a>
+                            </li>
+                                                                                                <li class="xb3 xl3 xm4 xl6 padding-small">
+                                <a target="_blank" href="experiment/10004.html">
+                                    <div class="border  padding-small">
+                                        <span class="x12 text-center text-white text-huge">力学部分</span>
+                                <span class="x12 text-center text-large padding-large-top">
+                                    刚体的转动惯量
+                                </span>
+                                                                            </div>
+                                </a>
+                            </li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </ul>
+                <!--            引入内容结束-->
+            </li>
+            <li class="tab-content">
+                <!--            引入内容-->
+                <ul id="tab-content-3" class="line container-menu">
+                                                                                                                                                                                                                                                        <li class="xb3 xl3 xm4 xl6 padding-small">
+                                <a target="_blank" href="experiment/10006.html">
+                                    <div class="border  padding-small">
+                                        <span class="x12 text-center text-white text-huge">电学部分</span>
+                                <span class="x12 text-center text-large padding-large-top">
+                                    制流电路、分压电路和电学实验基础知识
+                                </span>
+                                                                            </div>
+                                </a>
+                            </li>
+                                                                                                <li class="xb3 xl3 xm4 xl6 padding-small">
+                                <a target="_blank" href="experiment/10007.html">
+                                    <div class="border  padding-small">
+                                        <span class="x12 text-center text-white text-huge">电学部分</span>
+                                <span class="x12 text-center text-large padding-large-top">
+                                    惠斯通电桥
+                                </span>
+                                                                            </div>
+                                </a>
+                            </li>
+                                                                                                <li class="xb3 xl3 xm4 xl6 padding-small">
+                                <a target="_blank" href="experiment/10010.html">
+                                    <div class="border  padding-small">
+                                        <span class="x12 text-center text-white text-huge">电学部分</span>
+                                <span class="x12 text-center text-large padding-large-top">
+                                    示波器的使用
+                                </span>
+                                                                            </div>
+                                </a>
+                            </li>
+                                                                                                <li class="xb3 xl3 xm4 xl6 padding-small">
+                                <a target="_blank" href="experiment/10011.html">
+                                    <div class="border  padding-small">
+                                        <span class="x12 text-center text-white text-huge">电学部分</span>
+                                <span class="x12 text-center text-large padding-large-top">
+                                    利用霍尔效应测磁场
+                                </span>
+                                                                            </div>
+                                </a>
+                            </li>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </ul>
+                <!--            引入内容结束-->
+            </li>
+            <li class="tab-content">
+                <!--            引入内容-->
+                <ul id="tab-content-4" class="line container-menu">
+                                                                                                                                                                                                                                                                                                                                                                                                                                        <li class="xb3 xl3 xm4 xl6 padding-small">
+                                <a target="_blank" href="experiment/10014.html">
+                                    <div class="border  padding-small">
+                                        <span class="x12 text-center text-white text-huge">光学部分</span>
+                                <span class="x12 text-center text-large padding-large-top">
+                                    分光计的调节和三棱镜顶角的测定
+                                </span>
+                                                                            </div>
+                                </a>
+                            </li>
+                                                                                                <li class="xb3 xl3 xm4 xl6 padding-small">
+                                <a target="_blank" href="experiment/10015.html">
+                                    <div class="border  padding-small">
+                                        <span class="x12 text-center text-white text-huge">光学部分</span>
+                                <span class="x12 text-center text-large padding-large-top">
+                                    光栅的衍射
+                                </span>
+                                                                            </div>
+                                </a>
+                            </li>
+                                                                                                <li class="xb3 xl3 xm4 xl6 padding-small">
+                                <a target="_blank" href="experiment/10017.html">
+                                    <div class="border  padding-small">
+                                        <span class="x12 text-center text-white text-huge">光学部分</span>
+                                <span class="x12 text-center text-large padding-large-top">
+                                    牛顿环和劈尖干涉
+                                </span>
+                                                                            </div>
+                                </a>
+                            </li>
+                                                                                                                                                                                                                                                                                                                                                                                                                            </ul>
+                <!--            引入内容结束-->
+            </li>
+            <li class="tab-content">
+                <!--            引入内容-->
+                <ul id="tab-content-5" class="line container-menu">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            <li class="xb3 xl3 xm4 xl6 padding-small">
+                                <a target="_blank" href="experiment/10018.html">
+                                    <div class="border  padding-small">
+                                        <span class="x12 text-center text-white text-huge">近代/综合</span>
+                                <span class="x12 text-center text-large padding-large-top">
+                                    光电效应实验及普朗克常数的测量
+                                </span>
+                                                                            </div>
+                                </a>
+                            </li>
+                                                                                                <li class="xb3 xl3 xm4 xl6 padding-small">
+                                <a target="_blank" href="experiment/10019.html">
+                                    <div class="border  padding-small">
+                                        <span class="x12 text-center text-white text-huge">近代/综合</span>
+                                <span class="x12 text-center text-large padding-large-top">
+                                    迈克尔孙干涉仪的调节和使用
+                                </span>
+                                                                            </div>
+                                </a>
+                            </li>
+                                                                                                <li class="xb3 xl3 xm4 xl6 padding-small">
+                                <a target="_blank" href="experiment/10020.html">
+                                    <div class="border  padding-small">
+                                        <span class="x12 text-center text-white text-huge">近代/综合</span>
+                                <span class="x12 text-center text-large padding-large-top">
+                                    密立根油滴实验
+                                </span>
+                                                                            </div>
+                                </a>
+                            </li>
+                                                                                                <li class="xb3 xl3 xm4 xl6 padding-small">
+                                <a target="_blank" href="experiment/10021.html">
+                                    <div class="border  padding-small">
+                                        <span class="x12 text-center text-white text-huge">近代/综合</span>
+                                <span class="x12 text-center text-large padding-large-top">
+                                    超声声速测量
+                                </span>
+                                                                            </div>
+                                </a>
+                            </li>
+                                                                                                <li class="xb3 xl3 xm4 xl6 padding-small">
+                                <a target="_blank" href="experiment/10022.html">
+                                    <div class="border  padding-small">
+                                        <span class="x12 text-center text-white text-huge">近代/综合</span>
+                                <span class="x12 text-center text-large padding-large-top">
+                                    动态悬挂法测量金属的杨氏模量
+                                </span>
+                                                                            </div>
+                                </a>
+                            </li>
+                                                                                                <li class="xb3 xl3 xm4 xl6 padding-small">
+                                <a target="_blank" href="experiment/10023.html">
+                                    <div class="border  padding-small">
+                                        <span class="x12 text-center text-white text-huge">近代/综合</span>
+                                <span class="x12 text-center text-large padding-large-top">
+                                    核磁共振(MNMR)实验
+                                </span>
+                                                                            </div>
+                                </a>
+                            </li>
+                                                                                                <li class="xb3 xl3 xm4 xl6 padding-small">
+                                <a target="_blank" href="experiment/10026.html">
+                                    <div class="border  padding-small">
+                                        <span class="x12 text-center text-white text-huge">近代/综合</span>
+                                <span class="x12 text-center text-large padding-large-top">
+                                    光敏传感器的光电特性研究
+                                </span>
+                                                                            </div>
+                                </a>
+                            </li>
+                                                                                                <li class="xb3 xl3 xm4 xl6 padding-small">
+                                <a target="_blank" href="experiment/10027.html">
+                                    <div class="border  padding-small">
+                                        <span class="x12 text-center text-white text-huge">近代/综合</span>
+                                <span class="x12 text-center text-large padding-large-top">
+                                    太阳能电池特性实验
+                                </span>
+                                                                            </div>
+                                </a>
+                            </li>
+                                                            </ul>
+                <!--            引入内容结束-->
+            </li>
+            <li class="tab-content">
+                <!--            引入内容-->
+                <ul id="tab-content-3" class="line container-menu">
+                    <li class="xb3 xl3 xm4 xl6 padding-small">
+                        <a target="_blank" href="tools/putong.html">
+                            <div class="border  padding-small">
+                                <span class="x12 text-center text-white text-huge">工具库</span>
+                                <span class="x12 text-center text-large padding-large-top">
+                                    普通计算器
+                                </span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="xb3 xl3 xm4 xl6 padding-small">
+                        <a target="_blank" href="tools/science.html">
+                            <div class="border  padding-small">
+                                <span class="x12 text-center text-white text-huge">工具库</span>
+                                <span class="x12 text-center text-large padding-large-top">
+                                    科学计算器
+                                </span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="xb3 xl3 xm4 xl6 padding-small">
+                        <a target="_blank" href="tools/bqd.html">
+                            <div class="border  padding-small">
+                                <span class="x12 text-center text-white text-huge">工具库</span>
+                                <span class="x12 text-center text-large padding-large-top">
+                                    不确定计算器
+                                </span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="xb3 xl3 xm4 xl6 padding-small">
+                        <a target="_blank" href="tools/zhucha.html">
+                            <div class="border  padding-small">
+                                <span class="x12 text-center text-white text-huge">工具库</span>
+                                <span class="x12 text-center text-large padding-large-top">
+                                    逐差法计算器
+                                </span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="xb3 xl3 xm4 xl6 padding-small">
+                        <a target="_blank" href="tools/zuobiao.html">
+                            <div class="border  padding-small">
+                                <span class="x12 text-center text-white text-huge">工具库</span>
+                                <span class="x12 text-center text-large padding-large-top">
+                                    坐标图绘制
+                                </span>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <!--            引入内容结束-->
+            </li>
+        </ul>
+    </div>
+</div>
+    <div class="container-layout margin-big-top margin-large-bottom">
+        <div class="border-top padding-top">
+            <div class="text-center">
+                <ul class="nav nav-inline">
+                </ul>
+            </div>
+            <div class="text-center height-big">
+                感谢学长的数据小助手网站，这里借用了 <a href="https://www.codecogs.com/latex/eqneditor.php?lang=zh-cn">Latex公式编辑器</a> 网站，进行了调试</div>
+        </div>
+        <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1256816682'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s11.cnzz.com/z_stat.php%3Fid%3D1256816682%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+    </div>
+
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":["mshare","qzone","sqq","weixin","tieba","tsina","tqq","bdysc","renren","bdxc","kaixin001","tqf","douban","bdhome","thx","ibaidu","mogujie","fx","youdao","sdo","qingbiji","people","mail","isohu","ty","fbook","twi","linkedin","h163","evernotecn","copy"],"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"2","bdPos":"right","bdTop":"37.5"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+</body>
+</html>
